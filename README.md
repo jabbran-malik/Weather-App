@@ -25,5 +25,5 @@ This app lets users search for any city to view real-time weather details, switc
 
 ---
 
-## 🏗️ Project Structure
+
 
