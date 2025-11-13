@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Weather api</title>
+</head>
+<body>
+   <div class="container">
+        <form id="weather-form">
+            <input type="text" placeholder="City Name" id="cities">
+            <button type="submit" id="search-btn">Search</button>
+        </form>
+        <div id="weather-info"></div>
+    </div>
+<div class="unit-toggle">
+    <label class="switch">
+        <input type="checkbox" id="unit-switch">
+        <span class="slider"></span>
+    </label>
+    <span class="unit-label">°F</span>
+</div>
+
+
+    <script type="module" src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+/* ===========================
+   General Reset & Styling
+=========================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #83a4d4, #b6fbff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+}
+
+/* ===========================
+   Container
+=========================== */
+.container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ===========================
+   Form Styling
+=========================== */
+form#weather-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+form input#cities {
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 1px solid #aaa;
+    flex: 1;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+form input#cities:focus {
+    border-color: #0077ff;
+    box-shadow: 0 0 10px rgba(0, 119, 255, 0.3);
+    outline: none;
+}
+
+form button#search-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #0077ff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+form button#search-btn:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+
+/* ===========================
+   Weather Info Popup Card
+=========================== */
+#weather-info {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 25px 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Show popup */
+#weather-info.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#weather-info h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #0077ff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+#weather-info p {
+    font-size: 18px;
+    margin: 6px 0;
+    color: #333;
+}
+
+#weather-info img {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+}
+
+/* Loading & Error Messages */
+#weather-info p.loading {
+    color: #0077ff;
+    font-style: italic;
+}
+
+#weather-info p.error {
+    color: red;
+    font-weight: bold;
+}
+.unit-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Switch container */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+/* Slider style */
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: 0.4s;
+}
+
+/* Circle knob inside slider */
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* Checked state */
+.switch input:checked + .slider {
+    background-color: #0077ff;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+/* Optional: show pointer on hover */
+.slider:hover {
+    cursor: pointer;
+}
+
+.unit-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+@media (max-width: 450px) {
+    form#weather-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form input#cities {
+        width: 100%;
+    }
+
+    #weather-info {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #weather-info h2 {
+        font-size: 20px;
+    }
+
+    #weather-info p {
+        font-size: 16px;
+    }
+
+    #weather-info img {
+        width: 60px;
+        height: 60px;
+    }
+}
