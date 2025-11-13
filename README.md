@@ -1,8 +1,5 @@
 # 🌤️ Weather App
 
-A clean and modern **Weather Application** built using **HTML, CSS, and JavaScript**, integrated with the [OpenWeatherMap API](https://openweathermap.org/api).  
-This app lets users search for any city to view real-time weather details, switch between **Celsius (°C)** and **Fahrenheit (°F)**, and automatically remembers the **last searched city** using `localStorage`.
-
 ---
 
 ## 🚀 Features
